@@ -644,7 +644,7 @@ function calendar (calendarOptions) {
     refCal = ref.clone();
     emitValues();
     updateTime();
-    api.emit('time', ref.format(o.timeFormat), 'time');
+    api.emit('time', setTime(ref, value).format(o.timeFormat), 'time');
     if ((!o.date && o.autoClose === true) || o.autoClose === 'time') {
       hideConditionally();
     } else {
